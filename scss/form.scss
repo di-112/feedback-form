@@ -52,7 +52,7 @@ $darkRed: #be1116;
    }
    & .form__content {
       flex: 1 1 auto;
-      padding: 50px;
+      padding: 50px 50px 20px;
       font-size: 16px;
       & .form__input-wrap {
          & span{
@@ -130,6 +130,26 @@ $darkRed: #be1116;
    font-size: 17px;
    @include adaptiv-font(17, 14);
    color: darkgreen;
+}
+
+.form__data{
+   @include adaptiv-font(17, 14);
+   & h2{
+      margin-bottom: 15px;
+      text-align: center;
+   }
+   & div{
+      margin-bottom: 10px;
+      &:last-child{
+         margin-bottom: 0;
+      }
+   }
+   & span{
+      font-weight: bold;
+      color: green
+   }
+   margin-bottom: 30px;
+   display: none;
 }
 
 

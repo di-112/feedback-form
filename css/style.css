@@ -125,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .form .form__content {
   flex: 1 1 auto;
-  padding: 50px;
+  padding: 50px 50px 20px;
   font-size: 16px;
 }
 .form .form__content .form__input-wrap {
@@ -200,6 +200,26 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 17px;
   font-size: calc(14px + 3 * ((100vw - 320px) / 1600));
   color: darkgreen;
+}
+
+.form__data {
+  font-size: calc(14px + 3 * ((100vw - 320px) / 1600));
+  margin-bottom: 30px;
+  display: none;
+}
+.form__data h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.form__data div {
+  margin-bottom: 10px;
+}
+.form__data div:last-child {
+  margin-bottom: 0;
+}
+.form__data span {
+  font-weight: bold;
+  color: green;
 }
 
 input::-webkit-input-placeholder {

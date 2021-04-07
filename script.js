@@ -10,7 +10,7 @@ const thirdName = document.querySelector('.form__third-name')
 
 const fullName = [firstName, secondName, thirdName]
 
-const adress = document.querySelector('.form__address')
+const address = document.querySelector('.form__address')
 
 const email = document.querySelector('.form__email')
 
@@ -61,12 +61,26 @@ const hiddenSuccessMessage = () => {
    success.style.display = 'none'
 }
 
+const showData = () => {
+   document.querySelector('.data').style.display = 'block'
+   document.querySelector('.data__name').textContent = `ФИО: ${fullName[0].value} ${fullName[1].value} ${fullName[2].value}`
+   document.querySelector('.data__telephone').textContent = `Телефон: ${telephone.value}`
+   document.querySelector('.data__address').textContent = `Адрес: ${address.value}`
+   document.querySelector('.data__email').textContent = `E-mail: ${email.value}`
+}
+
+const hiddenData = () => {
+   document.querySelector('.data').style.display = 'none'
+}
+
+
 const checkValidFormAndShowErrors = () => {
 
    let errorFlag = false
 
    hiddenErrorMessage()
    hiddenSuccessMessage()
+   hiddenData()
 
    formInputs.forEach(input => {
       if(isEmpty(input.value)){    
@@ -97,10 +111,13 @@ const checkValidFormAndShowErrors = () => {
    })
 
    if(!errorFlag) {
-      form.submit()
       showSuccessMessage('Данные введены верно')
+      showData()
+      //form.submit()
    }
 }
 
-document.querySelector('.form__btn').addEventListener('click', e => checkValidFormAndShowErrors())
+document.querySelector('.form__btn').addEventListener('click', e => {
+   checkValidFormAndShowErrors()
+})
 
